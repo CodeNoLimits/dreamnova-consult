@@ -388,10 +388,13 @@ export default function AgencyPage() {
       <footer className="py-8 px-4 border-t border-[var(--color-glass-border)]">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-[var(--color-text-muted)]">
           <p>&copy; {new Date().getFullYear()} Dream Nova Consult. Tous droits réservés.</p>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap gap-4 sm:gap-6">
             <a href={FORMATION_URL} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-text-secondary)] transition">Formation IA</a>
             <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-text-secondary)] transition">LinkedIn</a>
             <a href={`mailto:${EMAIL}`} className="hover:text-[var(--color-text-secondary)] transition">Contact</a>
+            <a href="/mentions-legales" className="hover:text-[var(--color-text-secondary)] transition">Mentions légales</a>
+            <a href="/cgv" className="hover:text-[var(--color-text-secondary)] transition">CGV</a>
+            <a href="/confidentialite" className="hover:text-[var(--color-text-secondary)] transition">Confidentialité</a>
           </div>
         </div>
       </footer>

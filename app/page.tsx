@@ -145,6 +145,7 @@ export default function AgencyPage() {
             {["Services", "Tarifs", "Processus", "Témoignages", "Contact"].map(l => (
               <a key={l} href={`#${l.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`} className="px-4 py-2 text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition rounded-lg hover:bg-white/5">{l}</a>
             ))}
+            <a href="/clients" className="px-4 py-2 text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition rounded-lg hover:bg-white/5">Clients</a>
             <a href={FORMATION_URL} target="_blank" rel="noopener noreferrer" className="px-4 py-2 text-sm text-[var(--color-gold)] hover:text-[var(--color-gold-light)] transition rounded-lg hover:bg-white/5 flex items-center gap-1">Formation IA <ExternalLink className="w-3 h-3" /></a>
           </div>
           <a href={`mailto:${EMAIL}`} className="hidden lg:inline-flex items-center gap-2 h-9 px-5 rounded-lg text-sm font-semibold bg-gradient-gold text-[var(--color-background)] hover:shadow-glow-gold active:scale-[0.98] transition-all">Réserver un appel</a>
@@ -157,6 +158,7 @@ export default function AgencyPage() {
               {["Services", "Tarifs", "Processus", "Témoignages", "Contact"].map(l => (
                 <a key={l} href={`#${l.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`} onClick={() => setMenuOpen(false)} className="px-4 py-3 text-lg text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition rounded-xl hover:bg-white/5">{l}</a>
               ))}
+              <a href="/clients" onClick={() => setMenuOpen(false)} className="px-4 py-3 text-lg text-[var(--color-gold)] hover:text-[var(--color-gold-light)] transition rounded-xl hover:bg-white/5">Portail Clients</a>
               <a href={`mailto:${EMAIL}`} onClick={() => setMenuOpen(false)} className="mt-6 flex items-center justify-center h-12 rounded-xl text-lg font-semibold bg-gradient-gold text-[var(--color-background)]">Réserver un appel</a>
             </div>
           </div>
@@ -389,6 +391,7 @@ export default function AgencyPage() {
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-[var(--color-text-muted)]">
           <p>&copy; {new Date().getFullYear()} Dream Nova Consult. Tous droits réservés.</p>
           <div className="flex flex-wrap gap-4 sm:gap-6">
+            <a href="/clients" className="hover:text-[var(--color-text-secondary)] transition">Portail Clients</a>
             <a href={FORMATION_URL} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-text-secondary)] transition">Formation IA</a>
             <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-text-secondary)] transition">LinkedIn</a>
             <a href={`mailto:${EMAIL}`} className="hover:text-[var(--color-text-secondary)] transition">Contact</a>

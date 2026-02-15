@@ -12,7 +12,6 @@ import {
   Mail,
   Phone,
   MapPin,
-  Star,
   Users,
   Zap,
   TrendingUp,
@@ -34,9 +33,9 @@ const TIKTOK = "https://tiktok.com/@dreamnova"
 const FORMATION_URL = "https://dreamnova-formation-ia.vercel.app"
 
 const heroStats = [
-  { value: "250+", label: "Projets livrés" },
+  { value: "63+", label: "Projets livrés" },
   { value: "98%", label: "Satisfaction client" },
-  { value: "15+", label: "Pays couverts" },
+  { value: "10+", label: "Pays couverts" },
   { value: "24h", label: "Temps de réponse" },
 ]
 
@@ -94,10 +93,13 @@ const processSteps = [
   { num: "04", title: "Suivi", time: "Continu", text: "Monitoring et optimisation continue." },
 ]
 
-const testimonials = [
-  { name: "Sophie Laurent", company: "Agence Immobilière SL", result: "+340% de leads", quote: "David a transformé notre approche digitale. En 3 mois, nos leads ont explosé.", service: "Marketing + Auto" },
-  { name: "Marc Benayoun", company: "E-commerce Fashion", result: "80% temps gagné", quote: "Les workflows ont libéré mon équipe des tâches répétitives.", service: "Automatisation" },
-  { name: "Léa Dubois", company: "Coach Business", result: "8 000€/mois", quote: "J'ai lancé ma propre offre de consulting IA grâce à la formation.", service: "Formation IA" },
+const portfolio = [
+  { name: "Keren Rabbi Yisrael", url: "https://haesh-sheli-new.vercel.app", category: "E-commerce", description: "Boutique de 43 livres Breslev avec paiement Stripe/PayPal, 6 langues et syst\u00e8me RTL/LTR.", tech: "React \u00b7 Vite \u00b7 Express \u00b7 Stripe" },
+  { name: "Moulin d\u2019Or\u00e9", url: "https://moulindore.co.il", category: "Restaurant", description: "Site vitrine \u00e9l\u00e9gant pour un restaurant gastronomique isra\u00e9lien avec r\u00e9servation en ligne.", tech: "WordPress \u00b7 Design \u00b7 H\u00e9bergement" },
+  { name: "Maison Sagit", url: "https://maisonsagit.com", category: "Bijouterie", description: "E-commerce de bijoux de luxe avec catalogue produits et design premium.", tech: "Next.js \u00b7 Supabase \u00b7 Vercel" },
+  { name: "DreamNova Formation IA", url: "https://dreamnova-formation-ia.vercel.app", category: "Formation", description: "Plateforme de formation \u00e0 l\u2019IA avec 45+ le\u00e7ons vid\u00e9o et certification incluse.", tech: "Next.js \u00b7 Tailwind CSS \u00b7 Vercel" },
+  { name: "Tikoun Aolam", url: "https://tikoun-aolam.com", category: "Librairie", description: "Librairie en ligne de livres Breslev en fran\u00e7ais avec paiement s\u00e9curis\u00e9.", tech: "WordPress \u00b7 WooCommerce \u00b7 Divi" },
+  { name: "Ha-Mazon", url: "https://ha-mazon-pitch.vercel.app", category: "FoodTech", description: "Pitch deck investisseur pour une plateforme de nutrition personnalis\u00e9e par IA.", tech: "Next.js \u00b7 Design \u00b7 Vercel" },
 ]
 
 const technologies = ["Next.js", "React", "TypeScript", "Supabase", "Stripe", "OpenAI", "Claude", "Gemini", "Make", "N8N", "Zapier", "Vercel", "Shopify", "Tailwind CSS", "Framer Motion"]
@@ -142,7 +144,7 @@ export default function AgencyPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           <a href="#" className="gradient-text-gold text-2xl md:text-3xl tracking-tight" style={{ fontFamily: "var(--font-serif)" }}>Dream Nova</a>
           <div className="hidden lg:flex items-center gap-1">
-            {["Services", "Tarifs", "Processus", "Témoignages", "Contact"].map(l => (
+            {["Services", "Tarifs", "Processus", "Portfolio", "Contact"].map(l => (
               <a key={l} href={`#${l.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`} className="px-4 py-2 text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition rounded-lg hover:bg-white/5">{l}</a>
             ))}
             <a href="/clients" className="px-4 py-2 text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition rounded-lg hover:bg-white/5">Clients</a>
@@ -155,7 +157,7 @@ export default function AgencyPage() {
           <div className="lg:hidden fixed inset-0 z-40">
             <div className="absolute inset-0 bg-[var(--color-background)]/90 backdrop-blur-xl" onClick={() => setMenuOpen(false)} />
             <div className="relative flex flex-col pt-24 px-6 pb-8">
-              {["Services", "Tarifs", "Processus", "Témoignages", "Contact"].map(l => (
+              {["Services", "Tarifs", "Processus", "Portfolio", "Contact"].map(l => (
                 <a key={l} href={`#${l.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`} onClick={() => setMenuOpen(false)} className="px-4 py-3 text-lg text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition rounded-xl hover:bg-white/5">{l}</a>
               ))}
               <a href="/clients" onClick={() => setMenuOpen(false)} className="px-4 py-3 text-lg text-[var(--color-gold)] hover:text-[var(--color-gold-light)] transition rounded-xl hover:bg-white/5">Portail Clients</a>
@@ -166,7 +168,7 @@ export default function AgencyPage() {
       </nav>
 
       {/* HERO */}
-      <section className="relative pt-28 pb-24 px-4 overflow-hidden">
+      <section className="relative pt-36 pb-24 px-4 overflow-hidden">
         <div className="hero-grid-pattern" />
         <div className="absolute top-10 left-1/4 w-[500px] h-[500px] bg-[var(--color-gold)]/5 rounded-full blur-[150px] pointer-events-none" />
         <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[var(--color-blue)]/5 rounded-full blur-[120px] pointer-events-none" />
@@ -331,28 +333,33 @@ export default function AgencyPage() {
         </div>
       </section>
 
-      {/* TEMOIGNAGES */}
-      <section id="temoignages" className="py-20 px-4">
+      {/* PORTFOLIO */}
+      <section id="portfolio" className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
-          <Reveal><div className="text-center mb-16"><span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-[var(--color-gold)]/10 text-[var(--color-gold)] border border-[var(--color-gold)]/20 mb-4">Résultats Clients</span><h2 className="text-4xl md:text-5xl gradient-text-gold" style={{ fontFamily: "var(--font-serif)" }}>Ils nous font confiance</h2></div></Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((t, i) => (
-              <Reveal key={t.name} delay={i * 150}>
-                <div className="glass-card h-full flex flex-col p-6 lg:p-8 hover:shadow-glow-gold transition-shadow">
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[var(--color-gold)]/10 text-[var(--color-gold)] border border-[var(--color-gold)]/20 self-start mb-5">{t.service}</span>
-                  <p className="text-2xl gradient-text-gold mb-4" style={{ fontFamily: "var(--font-serif)" }}>{t.result}</p>
-                  <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed flex-1 italic">&ldquo;{t.quote}&rdquo;</p>
-                  <div className="mt-6 pt-5 border-t border-[var(--color-glass-border)]">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-[var(--color-surface-raised)] border border-[var(--color-glass-border)] flex items-center justify-center"><span className="text-xs font-semibold text-[var(--color-gold)]">{t.name.split(" ").map(n => n[0]).join("")}</span></div>
-                      <div><p className="text-sm text-[var(--color-text-primary)] font-medium">{t.name}</p><p className="text-xs text-[var(--color-text-muted)]">{t.company}</p></div>
-                    </div>
-                    <div className="flex gap-0.5 mt-3">{[1,2,3,4,5].map(s => <Star key={s} className="w-3.5 h-3.5 fill-[var(--color-gold)] text-[var(--color-gold)]" />)}</div>
+          <Reveal><div className="text-center mb-16"><span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-[var(--color-gold)]/10 text-[var(--color-gold)] border border-[var(--color-gold)]/20 mb-4">Portfolio</span><h2 className="text-4xl md:text-5xl gradient-text-gold" style={{ fontFamily: "var(--font-serif)" }}>Nos réalisations</h2><p className="text-lg text-[var(--color-text-secondary)] max-w-2xl mx-auto mt-4">Quelques projets récents déployés en production.</p></div></Reveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {portfolio.map((p, i) => (
+              <Reveal key={p.name} delay={i * 100}>
+                <a href={p.url} target="_blank" rel="noopener noreferrer" className="glass-card h-full flex flex-col overflow-hidden group hover:shadow-glow-gold transition-shadow">
+                  <div className="relative w-full h-48 bg-[var(--color-surface)] overflow-hidden">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={`https://image.thum.io/get/width/600/crop/400/${p.url}`} alt={p.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                   </div>
-                </div>
+                  <div className="p-6 flex flex-col flex-1">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[var(--color-gold)]/10 text-[var(--color-gold)] border border-[var(--color-gold)]/20 self-start mb-3">{p.category}</span>
+                    <h3 className="text-lg text-[var(--color-text-primary)] mb-2" style={{ fontFamily: "var(--font-serif)" }}>{p.name}</h3>
+                    <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed flex-1 mb-4">{p.description}</p>
+                    <p className="text-xs text-[var(--color-text-muted)]" style={{ fontFamily: "var(--font-mono)" }}>{p.tech}</p>
+                  </div>
+                </a>
               </Reveal>
             ))}
           </div>
+          <Reveal delay={700}>
+            <div className="text-center mt-10">
+              <a href="https://dreamnova-portfolio.vercel.app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[var(--color-gold)] hover:text-[var(--color-gold-light)] transition font-medium">Voir tous nos 63+ projets <ExternalLink className="w-4 h-4" /></a>
+            </div>
+          </Reveal>
         </div>
       </section>
 

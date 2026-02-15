@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function Confidentialite() {
   return (
-    <div className="min-h-screen bg-[var(--color-bg)] text-[var(--color-text-primary)]">
+    <div className="min-h-screen bg-[var(--color-background)] text-[var(--color-text-primary)]">
       <div className="max-w-3xl mx-auto px-4 py-16 sm:py-24">
         <Link href="/" className="inline-flex items-center gap-2 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-gold)] transition mb-8">
           <ArrowLeft size={16} />

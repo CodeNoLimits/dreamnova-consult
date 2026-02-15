@@ -125,9 +125,9 @@ export default function OGImage() {
           }}
         >
           {[
-            { num: "50+", label: "Clients" },
-            { num: "95%", label: "Satisfaction" },
-            { num: "8 ans", label: "Expérience" },
+            { num: "63+", label: "Projets" },
+            { num: "98%", label: "Satisfaction" },
+            { num: "10+", label: "Pays" },
           ].map((s) => (
             <div
               key={s.label}

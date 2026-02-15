@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
 @theme inline {
   --color-background: #06060C;
@@ -33,18 +32,20 @@
   --font-mono: 'JetBrains Mono', Menlo, monospace;
 }
 
+/* Self-hosted fonts via next/font override external Google Fonts */
+:root {
+  --font-serif: var(--font-nf-serif), Georgia, serif;
+  --font-sans: var(--font-nf-sans), system-ui, sans-serif;
+  --font-mono: var(--font-nf-mono), Menlo, monospace;
+}
+
 /* Base Styles */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-html { scroll-behavior: smooth; }
-
 body {
   font-family: var(--font-sans);
   background-color: var(--color-background);
   color: var(--color-text-primary);
   line-height: 1.6;
   overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
@@ -123,13 +124,3 @@ h1, h2, h3 { font-family: var(--font-serif); }
   box-shadow: 0 0 20px rgba(212, 175, 55, 0.15), 0 0 40px rgba(212, 175, 55, 0.05);
 }
 
-/* Animations */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes pulse-glow {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.6; }
-}

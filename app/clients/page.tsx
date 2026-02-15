@@ -10,7 +10,6 @@ import {
   Clock,
   Phone,
   Mail,
-  ExternalLink,
   Search,
   Filter,
   TrendingUp,
@@ -359,7 +358,6 @@ export default function ClientPortalPage() {
   })
 
   const criticalCount = clients.filter(c => c.status === "critical").length
-  const activeCount = clients.filter(c => c.status === "active").length
   const totalRevenue = "9 690 \u20ac"
   const avgProgress = Math.round(clients.reduce((sum, c) => sum + c.progress, 0) / clients.length)
 

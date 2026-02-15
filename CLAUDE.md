@@ -17,14 +17,14 @@ app/
 ```
 
 ## Sections on Homepage
-1. Navbar (responsive + mobile menu)
-2. Hero (stats: 250+ projects, 98% satisfaction, 15+ pays, 24h response)
+1. Navbar (responsive + mobile menu) — Portfolio link added
+2. Hero (stats: 63+ projects, 98% satisfaction, 10+ pays, 24h response)
 3. Founders (David Dream Nova CEO + Melea Directrice Commerciale)
 4. Services (6 services with pricing, expandable)
 5. Valeurs (4 core values)
 6. Process (4 steps)
 7. **Tarifs** (4 forfaits: Solo 490, Starter 2300, Growth 5400, Enterprise 13800)
-8. Testimonials (3 clients)
+8. **Portfolio** (6 real deployed projects with live thum.io thumbnails)
 9. Tech Stack (15 technologies)
 10. CTA (email + WhatsApp)
 11. Footer
@@ -37,17 +37,22 @@ app/
 - TikTok: https://tiktok.com/@dreamnova
 - Formation: https://dreamnova-formation-ia.vercel.app
 
+## Completed (Feb 13, 2026)
+- [x] Replace fake testimonials with real portfolio (6 live projects with thum.io thumbnails)
+- [x] Fix inflated stats (250+ → 63+ verified projects)
+- [x] Self-host fonts via next/font (eliminated render-blocking Google Fonts)
+- [x] Enhanced SEO: keywords, JSON-LD ProfessionalService schema, OG image alignment
+- [x] Fixed CSS variables in legal pages (--color-bg → --color-background)
+- [x] Added image optimization config (thum.io, compression, no poweredByHeader)
+- [x] Portfolio links to full portfolio at dreamnova-portfolio.vercel.app
+- [x] Fixed navbar/hero overlap (pt-28 → pt-36)
+- [x] Fixed lint warnings in clients page (unused imports)
+
 ## TODO
 - [ ] Add individual service pages (/services/[slug])
-- [ ] Add portfolio/case studies page
 - [ ] Add blog page (Dell generating articles with Ollama)
 - [ ] Add contact form with Brevo integration
 - [ ] Connect Stripe for service payments
-- [ ] Add animations and micro-interactions
-
-## David Must Do
-- [ ] Provide real testimonial quotes from actual clients
-- [ ] Confirm pricing plans (Solo/Starter/Growth/Enterprise)
-- [ ] Upload profile photos (David + Melea)
-- [ ] Review Melea bio and role description
-- [ ] Review and approve all site content
+- [ ] Add real profile photos for David + Melea
+- [ ] Add authentication to /clients page (currently public with sensitive client data)
+- [ ] Consider splitting page.tsx into server/client components (currently all "use client")

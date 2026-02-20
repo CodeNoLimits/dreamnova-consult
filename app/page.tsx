@@ -343,7 +343,10 @@ export default function AgencyPage() {
                 <a href={p.url} target="_blank" rel="noopener noreferrer" className="glass-card h-full flex flex-col overflow-hidden group hover:shadow-glow-gold transition-shadow">
                   <div className="relative w-full h-48 bg-[var(--color-surface)] overflow-hidden">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={`https://image.thum.io/get/width/600/crop/400/${p.url}`} alt={p.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                    <img src={`https://image.thum.io/get/width/600/crop/400/${p.url}`} alt={p.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" onError={(e) => { const t = e.currentTarget; t.style.display = "none"; const fb = t.parentElement?.querySelector(".thumb-fallback") as HTMLElement; if (fb) fb.style.display = "flex"; }} />
+                    <div className="thumb-fallback hidden w-full h-full items-center justify-center bg-gradient-to-br from-[var(--color-surface)] to-[var(--color-background)] border border-[var(--color-gold)]/10">
+                      <span className="gradient-text-gold text-2xl" style={{ fontFamily: "var(--font-serif)" }}>{p.name.charAt(0)}</span>
+                    </div>
                   </div>
                   <div className="p-6 flex flex-col flex-1">
                     <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[var(--color-gold)]/10 text-[var(--color-gold)] border border-[var(--color-gold)]/20 self-start mb-3">{p.category}</span>

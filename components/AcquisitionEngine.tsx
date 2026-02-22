@@ -35,7 +35,7 @@ const cards = [
 
 export default function AcquisitionEngine() {
   return (
-    <section className="py-24 bg-[#06060C]">
+    <section id="acquisition" className="py-24 bg-[#06060C]">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

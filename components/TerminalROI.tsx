@@ -38,7 +38,7 @@ export default function TerminalROI() {
   }
 
   return (
-    <section id="roi" className="py-24 bg-[#06060C]">
+    <section id="audit-roi" className="py-24 bg-[#06060C]">
       <div className="max-w-4xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

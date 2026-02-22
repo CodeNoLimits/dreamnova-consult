@@ -12,12 +12,36 @@ const projects = [
     color: "#FF6B00",
   },
   {
+    name: "Barukh Sagit Jewelry",
+    type: "E-commerce Luxe",
+    url: "https://barukh-sagit-jewelry.vercel.app",
+    desc: "341 produits · 2078 images WebP · 3 langues · Design Cartier/Tiffany",
+    tag: "LIVE ✓",
+    color: "#D4AF37",
+  },
+  {
     name: "Breslev Books",
     type: "Bibliothèque digitale",
     url: "https://ultime-esther-ifra-breslev.vercel.app",
     desc: "Catalogue complet Esther Ifrah · Téléchargements PDF · Multi-langue",
     tag: "LIVE ✓",
-    color: "#D4AF37",
+    color: "#8B5CF6",
+  },
+  {
+    name: "DreamNova Portfolio",
+    type: "Vitrine agence",
+    url: "https://dreamnova-portfolio.vercel.app",
+    desc: "Portfolio ultra-premium · Animations Framer Motion · Thème luxe noir/or",
+    tag: "LIVE ✓",
+    color: "#10B981",
+  },
+  {
+    name: "Nachman Science",
+    type: "Plateforme académique",
+    url: "https://nachman-science.vercel.app",
+    desc: "Recherche H(F)=1.846 bits · 185 références · Paper académique interactif",
+    tag: "LIVE ✓",
+    color: "#F59E0B",
   },
   {
     name: "DreamNova Status Hub",
@@ -31,7 +55,7 @@ const projects = [
 
 export default function EcosystemShowcase() {
   return (
-    <section id="portfolio" className="py-24 bg-[#0A0A12]">
+    <section id="ecosystem" className="py-24 bg-[#0A0A12]">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -51,7 +75,7 @@ export default function EcosystemShowcase() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
           {projects.map((project, i) => (
             <motion.a
               key={project.name}

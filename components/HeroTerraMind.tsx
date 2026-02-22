@@ -141,7 +141,7 @@ export default function HeroTerraMind() {
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <a
-            href="#roi"
+            href="#audit-roi"
             className="px-8 py-4 bg-[#D4AF37] text-black font-bold rounded-lg hover:bg-[#F5D78E] transition-all duration-300 hover:scale-105 text-lg"
           >
             Lancer l&apos;Audit R.O.I →

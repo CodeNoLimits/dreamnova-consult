@@ -28,7 +28,7 @@ const protocols = [
 
 export default function EmpireManifesto() {
   return (
-    <section id="mission" className="py-24 bg-[#06060C] relative overflow-hidden">
+    <section id="manifesto" className="py-24 bg-[#06060C] relative overflow-hidden">
       {/* HAFATSA watermark */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
         <span

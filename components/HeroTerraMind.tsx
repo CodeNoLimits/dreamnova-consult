@@ -147,10 +147,12 @@ export default function HeroTerraMind() {
             Lancer l&apos;Audit R.O.I →
           </a>
           <a
-            href="mailto:dreamnovaultimate@gmail.com?subject=Appel%20Découverte%20Gratuit"
-            className="px-8 py-4 border border-[#D4AF37]/40 text-[#D4AF37] font-semibold rounded-lg hover:border-[#D4AF37] hover:bg-[#D4AF37]/5 transition-all duration-300 text-lg"
+            href="https://wa.me/972584921492?text=Bonjour%20David%2C%20je%20veux%20en%20savoir%20plus%20sur%20TerraMind%20%F0%9F%9A%80"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-8 py-4 border border-green-600/50 text-green-400 font-semibold rounded-lg hover:border-green-500 hover:bg-green-900/20 transition-all duration-300 text-lg"
           >
-            Réserver un appel
+            💬 WhatsApp direct
           </a>
         </motion.div>
       </div>

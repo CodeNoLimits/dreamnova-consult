@@ -25,7 +25,15 @@ export default function TerminalROI() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!email) return
-    // Lead captured — could be sent to Supabase or email here
+    try {
+      await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, revenue, hours, roi }),
+      })
+    } catch {
+      // Silent fail — UX must not be blocked
+    }
     setSubmitted(true)
   }
 
@@ -132,9 +140,19 @@ export default function TerminalROI() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="text-center py-4 text-green-400 font-mono text-sm"
+                className="space-y-3"
               >
-                ✓ Rapport envoyé à {email} — Esther prend contact sous 24h
+                <div className="text-center py-3 text-green-400 font-mono text-sm">
+                  ✓ Rapport envoyé à {email} — réponse sous 24h
+                </div>
+                <a
+                  href={`https://wa.me/972584921492?text=Bonjour%20David%2C%20j%27ai%20utilis%C3%A9%20le%20calculateur%20TerraMind%20%E2%80%94%20ROI%20projet%C3%A9%20${roi.toLocaleString()}%E2%82%AC%20%F0%9F%9A%80`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 w-full py-3 bg-green-600 hover:bg-green-500 text-white font-bold rounded-lg transition-all text-sm"
+                >
+                  💬 Discuter maintenant sur WhatsApp
+                </a>
               </motion.div>
             )}
           </div>
